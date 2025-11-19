@@ -127,6 +127,11 @@ if __name__ == "__main__":
         logger.info(f"[main] Comienzo del proceso para curso")
         logger.info(f"[main] {COURSE_NAME}")
         run()
+    except ValueError as ve:
+        logger.error("Error, variables sin valor")
+        logger.error(ve, exc_info=True)
+        print("Error al ejecutar. Favor revisar las variables de entorno.")
+        print(ve)
     except Exception as e:
         logger.error("Error en la ejecución")
         logger.error(e, exc_info=True)
